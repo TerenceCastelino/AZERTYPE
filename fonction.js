@@ -10,6 +10,7 @@ function afficherResultat(resultat, iterateur) {
 //  et retourne le nombre de mots/phrases correctement tapés
 
 function lancerBoucleDeJeu(liste) {
+  let score = 0;
   for (let i = 0; i < liste.length; i++) {
     let mots = prompt(liste[i]);
     if (liste[i] == mots) {
@@ -18,11 +19,13 @@ function lancerBoucleDeJeu(liste) {
 
     afficherResultat(score, i);
   }
-  return score;
+  //   return score;
 }
 
 // choisirPhrasesOuMots : cette fonction demande à l’utilisateur s’il veut jouer avec des phrases ou des mots.
 function choisirListe() {
+  let liste = "";
+  let choix = "";
   do {
     alert("voulez vous la liste de mots pour les animaux de la ferme ou foret");
     choix = prompt("ecrivez ferme ou foret ");
@@ -31,10 +34,10 @@ function choisirListe() {
 
   switch (choix) {
     case "ferme":
-      liste = [...listeDeMots2];
+      liste = [...listeDeMots1];
       break;
     case "foret":
-      liste = [...listeDeMots1];
+      liste = [...listeDeMots2];
       break;
     default:
       "entrer incorect";
